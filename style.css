@@ -522,6 +522,12 @@ transition: transform 0.6s ease;
   transform: scale(0.9);
   transition: transform 0.3s ease-in-out;
 }
+/* --- Hamburger Button --- */
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
 /* ========== MEDIA QUERIES ========== */
 @media (max-width: 768px) {
   .services-container,
@@ -548,6 +554,27 @@ transition: transform 0.6s ease;
   .show-more,
   .contact-form button {
     width: 100%;
+  }
+  /* --- Hide links by default on small screens --- */
+  .hamburger {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    position: absolute;
+    top: 60px;  /* --- Adjust based on navbar's height --- */
+    right: 10px;
+    width: 150px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-links li {
+    margin: o.5rem 0;
   }
 }
 
@@ -738,6 +765,5 @@ transition: transform 0.6s ease;
   transition: transform 0.3s ease-in-out;
   transform: scale(1.1);
 }
-
 
 }

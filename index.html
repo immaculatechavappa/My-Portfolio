@@ -10,7 +10,8 @@
 <header>
     <nav class="navbar">
         <div class="logo">William<span class="dot">.</span></div>
-        <ul class="nav-links">
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About me</a></li>
             <li><a href="#services">Services</a></li>
@@ -24,7 +25,14 @@
     </nav>
 </header>
 <body>
-<script src="script.js"></script>
+<script src="script.js">
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  })
+</script>
 <main>
     <section>
 <div class="content">
