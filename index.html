@@ -10,7 +10,7 @@
 <header>
     <nav class="navbar">
         <div class="logo">William<span class="dot">.</span></div>
-        <div class="hamburger" id="hamburger">&#9776;</div>
+        <div class="hamburger" id="hamburgerBtn">&#9776;</div>
         <ul class="nav-links" id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About me</a></li>
@@ -26,12 +26,19 @@
 </header>
 <body>
 <script src="script.js">
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-  
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  })
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburgerBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+
+    // Change icon: ☰ to ×
+    if (navLinks.classList.contains('active')) {
+      hamburgerBtn.innerHTML = '&times;'; // ×
+    } else {
+      hamburgerBtn.innerHTML = '&#9776;'; // ☰
+    }
+  });
 </script>
 <main>
     <section>
