@@ -19,3 +19,17 @@
       localStorage.setItem('theme', 'light');
     }
   });
+
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburgerBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+
+    // Change icon: ☰ to ×
+    if (navLinks.classList.contains('active')) {
+      hamburgerBtn.innerHTML = '&times;'; // ×
+    } else {
+      hamburgerBtn.innerHTML = '&#9776;'; // ☰
+    }
+  });
